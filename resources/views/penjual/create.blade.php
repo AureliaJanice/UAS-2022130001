@@ -1,11 +1,11 @@
 @extends('layouts.app')
 
-@section('title', 'Register New Guest')
+@section('title', 'Register New Saler')
 
 @section('content')
 
 <div class="mt-4 p-5 bg-black text-white">
-    <h1>Register New Guest</h1>
+    <h1>Register</h1>
 </div>
 
 <div class="row my-5">
@@ -20,50 +20,19 @@
         </div>
         @endif
 
-        <form action="{{ route('guests.store') }}" method="POST" enctype="multipart/form-data">
+        <form action="{{ route('penjual.store') }}" method="POST" enctype="multipart/form-data">
             @csrf
 
             <div class="form-group">
-                <label for="guest_name">Guest Name</label>
-                <input type="text" class="form-control" id="guest_name"
-                    placeholder="Guest Name" name="name" required value="{{ old('name')}}">
+                <label for="saler_name">Name</label>
+                <input type="text" class="form-control" id="saler_name"
+                    placeholder="saler Name" name="name" required value="{{ old('name')}}">
             </div>
 
             <div class="form-group">
-                <label for="guest_category">Guest Category</label>
-                <select class="form-select form-select-lg mb-3" name="category_id" >
-                    {{-- cara menghub ke tabel induk --}}
-                    <option value=" ">No Category</option>
-                    @foreach ( $categories as $category )
-                        <option value="{{ $category->id }}">
-                            {{ $category->name }}
-                        </option>
-                    @endforeach
-                </select>
-            </div>
-
-            <div class="form-group">
-                <label for="guest_tag">Guest Tags</label>
-                <select class="form-select form-select-lg mb-3" name="tags[]" multiple>
-                    {{-- cara menghub ke tabel induk --}}
-                    @foreach ( $tags as $tag )
-                        <option value="{{ $tag->id }}">
-                            {{ $tag->name }}
-                        </option>
-                    @endforeach
-                </select>
-            </div>
-
-            <div class="form-group">
-                <label for="message">Message</label>
+                <label for="message">Address</label>
                 <input type="text" class="form-control" id="message"
                     placeholder="Message" name="message" required value="{{ old('message')}}">
-            </div>
-
-            <div class="form-group">
-                <label for="email">Email</label>
-                <input type="email" class="form-control" id="email"
-                    placeholder="Email Address" name="email" value="{{ old('email')}}">
             </div>
 
             <div class="form-group">
@@ -72,14 +41,12 @@
                     placeholder="Phone Number" name="phone_number" value="{{ old('phone_number')}}">
             </div>
 
-{{-- shortcut: ctrl+ ?/ --}}
-
-            {{-- Input avatar --}}
             <div class="form-group">
-                <label for="avatar">Avatar</label>
-                <input type="file" class="form-control" id="avatar"
-                    name="avatar">
+                <label for="email">Email</label>
+                <input type="email" class="form-control" id="email"
+                    placeholder="Email Address" name="email" value="{{ old('email')}}">
             </div>
+
 
             <button type="submit" class="btn btn-primary btn-block">Save</button>
         </form>
