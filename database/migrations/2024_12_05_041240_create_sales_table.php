@@ -14,7 +14,8 @@ return new class extends Migration
         Schema::create('sales', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('penjual_id');
-            $table->unsignedBigInteger('id_camera');
+            $table->foreignId('penjual_id')->constrained()->onDelete('cascade');
+            $table->integer('quantity')->default(1);
             $table->timestamps();
         });
     }

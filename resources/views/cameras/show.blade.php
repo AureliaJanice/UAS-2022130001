@@ -12,78 +12,63 @@
             <div class="card-body">
                 <div class="row d-flex justify-content-center">
                     <div class="col-sm-3">
-                        @if ($camera->photo)
-                            <img src="{{ $camera->photo_url }}" class="rounded img-thumbnail w-40"/>
+                        @if ($camera->camera_image)
+                            <img src="{{ $camera->camera_image_url }}" class="rounded img-thumbnail w-40"/>
                         @endif
                     </div>
         <div class="col-sm-6">
           <div class="row d-flex justify-content-center">
             <div class="col-8 col-sm-4">
-                Name
+                Camera Name
             </div>
             <div class="col-8 col-sm-4">
-                {{ $camera->name }}
+                {{ $camera->camera_name }}
             </div>
             <div class="row d-flex justify-content-center">
                 <div class="col-8 col-sm-4">
-                    Species
+                    Brand
                 </div>
                 <div class="col-4 col-sm-4">
-                    {{ $camera->species }}
+                    {{ $camera->brand }}
                 </div>
             </div>
             <div class="row d-flex justify-content-center">
                 <div class="col-8 col-sm-4">
-                    Primary Type
+                    Price
                 </div>
                 <div class="col-4 col-sm-4">
-                    {{ $camera->primary_type }}
+                    {{ $camera->price}}
                 </div>
             </div>
             <div class="row d-flex justify-content-center">
                 <div class="col-8 col-sm-4">
-                    Weight
+                    Quantity
                 </div>
                 <div class="col-4 col-sm-4">
-                    {{ $camera->weight }}
+                    {{ $camera->quantity }}
                 </div>
             </div>
             <div class="row d-flex justify-content-center">
                 <div class="col-8 col-sm-4">
-                    Height
+                    Status
                 </div>
                 <div class="col-4 col-sm-4">
-                    {{ $camera->height }}
+                    @if ($camera->status)
+                            <td>New</td>
+                        @else
+                            <td>Second</td>
+                        @endif
                 </div>
             </div>
             <div class="row d-flex justify-content-center">
                 <div class="col-8 col-sm-4">
-                    Hp
+                    Description
                 </div>
                 <div class="col-4 col-sm-4">
                     {{ $camera->hp }}
                 </div>
             </div>
-            <div class="row d-flex justify-content-center">
-                <div class="col-8 col-sm-4">
-                    Defense
-                </div>
-                <div class="col-4 col-sm-4">
-                    {{ $camera->defense }}
-                </div>
-            </div>
-            <div class="row d-flex justify-content-center">
-                <div class="col-8 col-sm-4">
-                    Is Legendary
-                </div>
-                <div class="col-4 col-sm-4">
-                    @if ($camera->is_legendary)
-                            <td>Yes</td>
-                        @else
-                            <td>No</td>
-                        @endif
-                </div>
-            </div>
+
         </div>
       </div>
 </div>

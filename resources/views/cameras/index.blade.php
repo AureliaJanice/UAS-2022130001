@@ -21,10 +21,10 @@
             <thead>
                 <tr>
                     <th scope="col">ID</th>
-                    <th scope="col">Name</th>
-                    <th scope="col">Merk</th>
-                    <th scope="col">Primary Type</th>
-                    <th scope="col">Power</th>
+                    <th scope="col">Camera Name</th>
+                    <th scope="col">Brand</th>
+                    <th scope="col">Quantity</th>
+                    <th scope="col">Price</th>
                     <th scope="col">Action</th>
                 </tr>
             </thead>
@@ -40,8 +40,9 @@
                     </td>
 
                     <td>{{ $camera->brand }}</td>
-                    <td>{{ $camera->price }}</td>
                     <td>{{ $camera->quantity }}</td>
+                    <td>{{ $camera->price }}</td>
+                    <td>{{ Str::limit($camera->description, 50, '...') }}</td>
 
                     <td>
                         <a href="{{ route('camera.edit', $camera) }}" class="btn btn-warning  btn-sm">

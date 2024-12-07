@@ -63,7 +63,7 @@
 
             <div class="form-check">
                 <label class="form-check-label" for="status">
-                    Status
+                    Status is New
                 </label>
                 <input class="form-check-input" type="checkbox" value="" id="status"
                     name="status" value="{{ old('status')}}" >

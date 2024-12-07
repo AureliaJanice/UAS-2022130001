@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('orders', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('pembeli_id');
-            $table->unsignedBigInteger('id_camera');
+            $table->foreign('pembeli_id')->references('id')->on('pembeli')->onDelete('cascade');
             $table->timestamps();
         });
     }
