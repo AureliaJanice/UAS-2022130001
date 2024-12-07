@@ -19,7 +19,7 @@ class CameraController extends Controller
     public function __invoke()
     {
         $cameras = Camera::paginate(20);
-        return view('cameras.index', compact('cameras'));
+        return view('camera.index', compact('cameras'));
     }
 
     /**

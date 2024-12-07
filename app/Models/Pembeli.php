@@ -2,9 +2,25 @@
 
 namespace App\Models;
 
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Facades\Storage;
 
 class Pembeli extends Model
 {
-    //
+    use HasFactory;
+
+    protected $fillable = [
+        'name',
+        'adress',
+        'phone_number',
+        'email',
+    ];
+
+    public function cameras()
+    {
+        return $this->belongsToMany(camera::class, 'camera_pembeli')->with();
+    }
+
+
 }
