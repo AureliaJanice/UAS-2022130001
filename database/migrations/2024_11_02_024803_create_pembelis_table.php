@@ -13,6 +13,10 @@ return new class extends Migration
     {
         Schema::create('pembelis', function (Blueprint $table) {
             $table->id();
+            $table->name();
+            $table->address();
+            $table->phone_number();
+            $table->email();
             $table->timestamps();
         });
     }

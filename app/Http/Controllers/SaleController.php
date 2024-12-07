@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\barang;
+use App\Models\Sale;
 use Illuminate\Http\Request;
 
-class BarangController extends Controller
+class SaleController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -34,7 +34,7 @@ class BarangController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(barang $barang)
+    public function show(Sale $sale)
     {
         //
     }
@@ -42,7 +42,7 @@ class BarangController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(barang $barang)
+    public function edit(Sale $sale)
     {
         //
     }
@@ -50,7 +50,7 @@ class BarangController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, barang $barang)
+    public function update(Request $request, Sale $sale)
     {
         //
     }
@@ -58,7 +58,7 @@ class BarangController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(barang $barang)
+    public function destroy(Sale $sale)
     {
         //
     }
